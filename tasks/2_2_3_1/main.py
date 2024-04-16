@@ -6,10 +6,8 @@ import time
 
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.C)
+robot = DriveBase(left_motor, right_motor, wheel_diameter=54, axle_track=105)
 
 while True:
-    left_motor.run(100)
-    right_motor.run(100)
-    time.sleep(2)
-    # 90 degrees turn
-    right_motor.run_target(100, -45, wait=True)
+    robot.straight(100)
+    robot.turn(90)
